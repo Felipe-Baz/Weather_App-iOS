@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6571849F288B54A90081F2B7 /* CardWeatherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6571849E288B54A90081F2B7 /* CardWeatherInfoView.swift */; };
+		657184A1288B55540081F2B7 /* CardFogInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657184A0288B55540081F2B7 /* CardFogInfoView.swift */; };
 		6594C770286F4FBB00A712E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594C76F286F4FBB00A712E2 /* AppDelegate.swift */; };
 		6594C772286F4FBB00A712E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594C771286F4FBB00A712E2 /* SceneDelegate.swift */; };
 		6594C774286F4FBB00A712E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594C773286F4FBB00A712E2 /* ViewController.swift */; };
@@ -16,6 +18,7 @@
 		6594C786286F571E00A712E2 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594C785286F571E00A712E2 /* PlaceModel.swift */; };
 		6594C78A286F58C600A712E2 /* PlacesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594C789286F58C600A712E2 /* PlacesMock.swift */; };
 		6594C791286F915800A712E2 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594C790286F915800A712E2 /* WeatherService.swift */; };
+		6599936A288B53B100B29B86 /* CardDayTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65999369288B53B100B29B86 /* CardDayTimeView.swift */; };
 		659A27302879026600160AC2 /* PlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659A272F2879026600160AC2 /* PlacesTableViewCell.swift */; };
 		659A274D2879306800160AC2 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659A274C2879306800160AC2 /* WeatherModel.swift */; };
 		65AFAA67287388AA0015EE88 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AFAA66287388AA0015EE88 /* WeatherDetailsViewController.swift */; };
@@ -25,6 +28,8 @@
 /* Begin PBXFileReference section */
 		031988E46BA11418A42C66DE /* Pods-Weather_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_App.debug.xcconfig"; path = "Target Support Files/Pods-Weather_App/Pods-Weather_App.debug.xcconfig"; sourceTree = "<group>"; };
 		192AC6B5BF2C21FBA2D589CE /* Pods_Weather_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6571849E288B54A90081F2B7 /* CardWeatherInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWeatherInfoView.swift; sourceTree = "<group>"; };
+		657184A0288B55540081F2B7 /* CardFogInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFogInfoView.swift; sourceTree = "<group>"; };
 		6594C76C286F4FBB00A712E2 /* Weather_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6594C76F286F4FBB00A712E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6594C771286F4FBB00A712E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +41,7 @@
 		6594C785286F571E00A712E2 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		6594C789286F58C600A712E2 /* PlacesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesMock.swift; sourceTree = "<group>"; };
 		6594C790286F915800A712E2 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		65999369288B53B100B29B86 /* CardDayTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDayTimeView.swift; sourceTree = "<group>"; };
 		659A272F2879026600160AC2 /* PlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewCell.swift; sourceTree = "<group>"; };
 		659A274C2879306800160AC2 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		65AFAA66287388AA0015EE88 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
@@ -131,9 +137,20 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		65999368288B52BD00B29B86 /* CardViews */ = {
+			isa = PBXGroup;
+			children = (
+				65999369288B53B100B29B86 /* CardDayTimeView.swift */,
+				6571849E288B54A90081F2B7 /* CardWeatherInfoView.swift */,
+				657184A0288B55540081F2B7 /* CardFogInfoView.swift */,
+			);
+			path = CardViews;
+			sourceTree = "<group>";
+		};
 		65AFAA632873860A0015EE88 /* WeatherDetails */ = {
 			isa = PBXGroup;
 			children = (
+				65999368288B52BD00B29B86 /* CardViews */,
 				65AFAA65287386610015EE88 /* ViewController */,
 				65AFAA64287386360015EE88 /* Models */,
 			);
@@ -290,11 +307,14 @@
 			files = (
 				6594C774286F4FBB00A712E2 /* ViewController.swift in Sources */,
 				6594C770286F4FBB00A712E2 /* AppDelegate.swift in Sources */,
+				6599936A288B53B100B29B86 /* CardDayTimeView.swift in Sources */,
 				6594C78A286F58C600A712E2 /* PlacesMock.swift in Sources */,
 				6594C772286F4FBB00A712E2 /* SceneDelegate.swift in Sources */,
 				659A274D2879306800160AC2 /* WeatherModel.swift in Sources */,
+				6571849F288B54A90081F2B7 /* CardWeatherInfoView.swift in Sources */,
 				6594C791286F915800A712E2 /* WeatherService.swift in Sources */,
 				65AFAA67287388AA0015EE88 /* WeatherDetailsViewController.swift in Sources */,
+				657184A1288B55540081F2B7 /* CardFogInfoView.swift in Sources */,
 				6594C786286F571E00A712E2 /* PlaceModel.swift in Sources */,
 				659A27302879026600160AC2 /* PlacesTableViewCell.swift in Sources */,
 			);
