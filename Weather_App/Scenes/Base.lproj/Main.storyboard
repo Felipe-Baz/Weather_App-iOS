@@ -158,19 +158,6 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LKU-cu-fWP">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="778"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="79p-Dj-I9I">
-                                                    <rect key="frame" x="0.0" y="0.0" width="174" height="650"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="plv-PH-Jgp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="174" height="650"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    </view>
-                                                    <vibrancyEffect>
-                                                        <blurEffect style="regular"/>
-                                                    </vibrancyEffect>
-                                                </visualEffectView>
-                                            </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <blurEffect style="regular"/>
@@ -200,13 +187,32 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28º / 14º Sensação térmica de 23º" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Rd-qn-pcA">
+                                        <rect key="frame" x="20" y="135" width="350" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="eA0-b6-YCb"/>
+                                            <constraint firstAttribute="width" constant="350" id="s9h-Za-uGs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dof-xV-RAd">
+                                        <rect key="frame" x="0.0" y="215" width="414" height="523"/>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Dof-xV-RAd" secondAttribute="trailing" id="1cT-cs-53m"/>
                                     <constraint firstItem="65A-CY-rWC" firstAttribute="top" secondItem="ZsJ-3b-LjS" secondAttribute="top" constant="40" id="2Ac-4M-rKm"/>
                                     <constraint firstItem="wFe-hs-ugp" firstAttribute="leading" secondItem="ZsJ-3b-LjS" secondAttribute="leading" id="2Iw-5X-61J"/>
                                     <constraint firstAttribute="trailing" secondItem="No5-Fj-HGz" secondAttribute="trailing" constant="10" id="6Mp-Ei-6oH"/>
+                                    <constraint firstItem="8Rd-qn-pcA" firstAttribute="leading" secondItem="ZsJ-3b-LjS" secondAttribute="leading" constant="20" id="BkV-iV-vzI"/>
+                                    <constraint firstItem="Dof-xV-RAd" firstAttribute="leading" secondItem="ZsJ-3b-LjS" secondAttribute="leading" id="H8b-5O-18d"/>
+                                    <constraint firstItem="Dof-xV-RAd" firstAttribute="top" secondItem="8Rd-qn-pcA" secondAttribute="bottom" constant="40" id="Iwe-Vc-awr" userLabel="Stack View.top = 28º / 14º Sensação térmica de 23º.bottom + 20"/>
+                                    <constraint firstItem="8Rd-qn-pcA" firstAttribute="top" secondItem="65A-CY-rWC" secondAttribute="bottom" constant="20" id="Nj3-ld-d5j"/>
                                     <constraint firstItem="mXS-Px-cW0" firstAttribute="top" secondItem="ZsJ-3b-LjS" secondAttribute="top" constant="-10" id="Xa3-tc-3Zj"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dof-xV-RAd" secondAttribute="bottom" constant="30" id="Zjb-c2-vk5"/>
                                     <constraint firstItem="mXS-Px-cW0" firstAttribute="leading" secondItem="ZsJ-3b-LjS" secondAttribute="leading" constant="-20" id="aRz-Jp-eJI"/>
                                     <constraint firstItem="65A-CY-rWC" firstAttribute="leading" secondItem="ZsJ-3b-LjS" secondAttribute="leading" constant="40" id="cKJ-WS-ae7"/>
                                     <constraint firstItem="No5-Fj-HGz" firstAttribute="top" secondItem="ZsJ-3b-LjS" secondAttribute="top" constant="10" id="kZ4-Hx-JIh"/>
