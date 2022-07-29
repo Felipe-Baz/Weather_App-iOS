@@ -22,13 +22,25 @@ class WeatherDetailsViewController: UIViewController, WeatherResponse {
     @IBOutlet weak var windSpeed: UILabel!
     @IBOutlet weak var visibility: UILabel!
     
+    // MARK: Service functions
     
     func onSuccess(response: WeatherModel) {
         print(response)
         reloadCard(res: response)
     }
     
+    func getInfo() {
+        guard let data = data?.nome else {
+            return
+        }
+        service?.getWeather(from: data)
+    }
+    
+    // MARK: Place info
+    
     var data: PlaceModel? = nil
+    
+    // MARK: viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +48,13 @@ class WeatherDetailsViewController: UIViewController, WeatherResponse {
         getInfo()
     }
     
+    // MARK: Config to talk between screens
+    
     func setData(data: PlaceModel) {
         self.data = data
     }
+    
+    // MARK: Reload Functions & actions
     
     @IBAction func AtualizarButton(_ sender: UIButton) {
         print("atualizar")
@@ -51,14 +67,12 @@ class WeatherDetailsViewController: UIViewController, WeatherResponse {
         formatTemperatureDetails(weather: res)
         formatTimesDetails(weather: res)
         formatPressureDetails(weather: res)
+        formatHumidityDetails(weather: res)
+        formatWindVelocityDetails(weather: res)
     }
     
-    func getInfo() {
-        guard let data = data?.nome else {
-            return
-        }
-        service?.getWeather(from: data)
-    }
+    
+    //MARK: Formatters
     
     private func formatTemperature(weather: WeatherModel) {
         debugPrint("Format Temperature")
@@ -94,6 +108,18 @@ class WeatherDetailsViewController: UIViewController, WeatherResponse {
         pressure.text = formatPressure(with: weather.main.pressure)
     }
     
+    private func formatHumidityDetails(weather: WeatherModel) {
+        debugPrint("Format Humidity Details")
+        humidity.text = formatHumidity(with: weather.main.humidity)
+    }
+    
+    private func formatWindVelocityDetails(weather: WeatherModel) {
+        debugPrint("Format Wind Velocity details")
+        windSpeed.text = formatWindVelocity(with: weather.wind.speed)
+    }
+    
+    //MARK: Helpers
+    
     private func kelvinToCelsius(kelvin: Float) -> Int {
         let celsius = kelvin - 273.15
         return Int(celsius)
@@ -121,5 +147,13 @@ class WeatherDetailsViewController: UIViewController, WeatherResponse {
         // Formata a string usando o setup definido
         let pressure = numberFormatter.string(from: NSNumber(value: pressure)) ?? "Valor indefinido"
         return "\(pressure) hPa"
+    }
+    
+    private func formatHumidity(with humidity: Float) -> String {
+        return "\(Int(humidity))%"
+    }
+    
+    private func formatWindVelocity(with windVelocity: Float) -> String {
+        return "\(windVelocity) km/h)"
     }
 }
