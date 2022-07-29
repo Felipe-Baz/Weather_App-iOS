@@ -28,7 +28,6 @@ class WeatherService {
             .responseDecodable(of: WeatherModel.self) { response in
                 switch response.result {
                 case .success(let res):
-                    print(res)
                     self.delegate.onSuccess(response: res)
                 case .failure(let error):
                     print(error)
