@@ -118,6 +118,11 @@ class WeatherDetailsViewController: UIViewController, WeatherResponse {
         windSpeed.text = formatWindVelocity(with: weather.wind.speed)
     }
     
+    private func formatVisibilityDetails(weather: WeatherModel) {
+        debugPrint("Format Visibility Details")
+        visibility.text = formatVisibility(with: weather.visibility)
+    }
+    
     //MARK: Helpers
     
     private func kelvinToCelsius(kelvin: Float) -> Int {
@@ -136,6 +141,23 @@ class WeatherDetailsViewController: UIViewController, WeatherResponse {
     }
     
     private func formatPressure(with pressure: Float) -> String{
+        return "\(pressure) hPa"
+    }
+    
+    private func formatHumidity(with humidity: Float) -> String {
+        return "\(Int(humidity))%"
+    }
+    
+    private func formatWindVelocity(with windVelocity: Float) -> String {
+        return "\(windVelocity) km/h"
+    }
+    
+    private func formatVisibility(with visibility: Int) -> String {
+        let visibility = visibility / 1000
+        return "\(visibility) Km"
+    }
+    
+    private func formatPoints(in number: Float) -> String{
         let numberFormatter = NumberFormatter()
 
         // Configura a estrategia de pontuação de acordo com o local desejado
@@ -145,15 +167,6 @@ class WeatherDetailsViewController: UIViewController, WeatherResponse {
         numberFormatter.numberStyle = .decimal
 
         // Formata a string usando o setup definido
-        let pressure = numberFormatter.string(from: NSNumber(value: pressure)) ?? "Valor indefinido"
-        return "\(pressure) hPa"
-    }
-    
-    private func formatHumidity(with humidity: Float) -> String {
-        return "\(Int(humidity))%"
-    }
-    
-    private func formatWindVelocity(with windVelocity: Float) -> String {
-        return "\(windVelocity) km/h)"
+        return numberFormatter.string(from: NSNumber(value: number)) ?? "Valor Inválido"
     }
 }
