@@ -89,6 +89,11 @@ class WeatherDetailsViewController: UIViewController, WeatherResponse {
         sunriseTime.text = formatTime(with: Double(weather.sys.sunrise))
     }
     
+    private func formatPressureDetails(weather: WeatherModel) {
+        debugPrint("Format Pressure Details")
+        pressure.text = formatPressure(with: weather.main.pressure)
+    }
+    
     private func kelvinToCelsius(kelvin: Float) -> Int {
         let celsius = kelvin - 273.15
         return Int(celsius)
@@ -102,5 +107,19 @@ class WeatherDetailsViewController: UIViewController, WeatherResponse {
         dateFormatter.dateFormat = "HH:mm"
         let strDate = dateFormatter.string(from: date)
         return strDate
+    }
+    
+    private func formatPressure(with pressure: Float) -> String{
+        let numberFormatter = NumberFormatter()
+
+        // Configura a estrategia de pontuação de acordo com o local desejado
+        numberFormatter.locale = Locale.current
+
+        // Configura o tipo de retorno desejado
+        numberFormatter.numberStyle = .decimal
+
+        // Formata a string usando o setup definido
+        let pressure = numberFormatter.string(from: NSNumber(value: pressure)) ?? "Valor indefinido"
+        return "\(pressure) hPa"
     }
 }
